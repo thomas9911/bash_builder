@@ -1,6 +1,6 @@
 [package]
 name = "bash_bundler"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Thomas <thomastimmer11@hotmail.com>"]
 edition = "2018"
 description = "Collects/bundles bash files into one file."
