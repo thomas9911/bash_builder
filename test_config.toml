@@ -1,4 +1,4 @@
-[builder]
+[bundler]
 replace_source = true
 replace_comment = false
 root_path = "./tests/source.sh"

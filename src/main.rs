@@ -10,7 +10,7 @@ const CIRCULAR_CUT_OFF: usize = 512;
 
 #[derive(Debug, Deserialize)]
 pub struct Config {
-    builder: Args,
+    bundler: Args,
 }
 
 /// Collects/bundles bash files into one file.
@@ -61,7 +61,7 @@ pub struct Config {
 ///
 /// ```toml
 ///
-/// [builder]
+/// [bundler]
 /// replace_source = true
 /// replace_comment = false
 /// root_path = "./tests/source.sh"
@@ -140,7 +140,7 @@ fn inner_main() -> Result<String, Error> {
     if let Some(config) = args.config {
         let configs = std::fs::read(config)?;
         let loaded: Config = toml::from_slice(&configs)?;
-        args = loaded.builder;
+        args = loaded.bundler;
     }
 
     if let Some(x) = args.root_path.clone() {
