@@ -1,5 +1,4 @@
 use serde_derive::Deserialize;
-use std::ffi::OsStr;
 use std::fs::File;
 use std::io::prelude::*;
 use std::io::{self, BufReader};
@@ -7,6 +6,13 @@ use std::path::{Path, PathBuf};
 use structopt::StructOpt;
 
 const CIRCULAR_CUT_OFF: usize = 512;
+const ALLOWED_EXTENSIONS: &'static [Option<&str>] = &[
+    Some("sh"),
+    Some("bash"),
+    Some("ksh"),
+    Some("zsh"),
+    Some("csh"),
+];
 
 #[derive(Debug, Deserialize)]
 pub struct Config {
@@ -343,10 +349,20 @@ impl BashFile {
     }
 
     fn to_valid_bash_file(mut path: PathBuf, to_test_file: &str) -> Option<(&str, PathBuf)> {
-        path.push(Path::new(to_test_file));
+        let import_path = Path::new(to_test_file);
+        if import_path.is_relative() {
+            path.push(import_path);
+        } else {
+            path = PathBuf::from(import_path)
+        }
 
-        if path.exists() && path.extension() == Some(OsStr::new("sh")) {
-            return Some((to_test_file, path));
+        if path.exists() {
+            match path.extension() {
+                Some(ref ext) if ALLOWED_EXTENSIONS.contains(&ext.to_str()) => {
+                    return Some((to_test_file, path))
+                }
+                _ => (),
+            }
         }
 
         None
