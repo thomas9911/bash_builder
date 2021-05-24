@@ -1,4 +1,4 @@
-# bash_builder
+# bash_bundler
 
 Collects/bundles bash files into one file.
 
@@ -58,7 +58,7 @@ root_path = "./tests/source.sh"
 
 ```text
 USAGE:
-bash_builder.exe [FLAGS] [OPTIONS] <root-path>
+bash_bundler.exe [FLAGS] [OPTIONS] <root-path>
 
 FLAGS:
 -h, --help  
