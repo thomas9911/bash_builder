@@ -5,7 +5,7 @@ authors = ["Thomas <thomastimmer11@hotmail.com>"]
 edition = "2018"
 description = "Collects/bundles bash files into one file."
 repository = "https://github.com/thomas9911/bash_bundler"
-license = "The Unlicense"
+license = "Unlicense"
 keywords = ["shell", "bundler", "bash"]
 categories = ["command-line-utilities", "development-tools"]
 
