@@ -35,7 +35,7 @@ pub struct Config {
 /// ```sh
 /// # import ./other.sh # other contains the my_func
 /// ```
-/// this will import from file `./src/utils/other.sh
+/// this will import from file `./src/utils/other.sh`
 ///
 /// With the source it is relative from the root file so like:
 ///
@@ -45,7 +45,7 @@ pub struct Config {
 /// my_func "hallo"
 /// ```
 ///
-/// and utils.sh looks like:
+/// and `utils.sh` looks like:
 ///
 /// ```sh
 /// source ./utils/other.sh # other contains the my_func
