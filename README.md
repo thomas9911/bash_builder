@@ -5,6 +5,24 @@ Collects/bundles bash files into one file.
 By default uses the saver `# import ./filename.sh` syntax to include other bash files.
 But can be set to use the already existing `source ./filename.sh` syntax.
 
+## Getting started
+
+```sh
+cargo install bash_bundler
+```
+
+Once installed:
+
+```sh
+bash_bundler your-main-file.sh > bundled.sh
+```
+
+Or with a config file:
+
+```sh
+bash_bundler --config your-config.toml > bundled.sh
+```
+
 ## examples and style differences
 
 There is a difference between the `import` and `source` import statements.
@@ -56,7 +74,7 @@ Configs can be used to override/save arguments. Config should look like:
 
 ```toml
 
-[builder]
+[bundler]
 replace_source = true
 replace_comment = false
 root_path = "./tests/source.sh"
@@ -66,7 +84,7 @@ root_path = "./tests/source.sh"
 
 ```text
 USAGE:
-    bash_bundler.exe [FLAGS] [OPTIONS] <root-path>
+    bash_bundler [FLAGS] [OPTIONS] <root-path>
 
 FLAGS:
     -h, --help
