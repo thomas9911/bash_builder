@@ -3,8 +3,11 @@ name = "bash_bundler"
 version = "0.1.0"
 authors = ["Thomas <thomastimmer11@hotmail.com>"]
 edition = "2018"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+description = "Collects/bundles bash files into one file."
+repository = "https://github.com/thomas9911/bash_bundler"
+license = "The Unlicense"
+keywords = ["shell", "bundler", "bash"]
+categories = ["command-line-utilities", "development-tools"]
 
 [dependencies]
 structopt = { version = "0.3", default-features = false }
