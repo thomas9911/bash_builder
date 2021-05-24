@@ -1,5 +1,9 @@
 # bash_bundler
 
+[![Crates.io](https://img.shields.io/crates/v/bash_bundler)](https://crates.io/crates/bash_bundler)
+[![Documentation](https://docs.rs/bash_bundler/badge.svg)](https://docs.rs/bash_bundler)
+![Crates.io](https://img.shields.io/crates/l/bash_bundler)
+
 Collects/bundles bash files into one file.
 
 By default uses the saver `# import ./filename.sh` syntax to include other bash files.
